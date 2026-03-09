@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reservasi Antrian BRI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background: #e4eeff;
+        animation: fadeIn 0.5s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .container {
+        display: flex;
+        height: 1024px;
+        width: 1440px;
+      }
+
+      /* SIDEBAR */
+
+      .sidebar {
+        width: 368px;
+        color: white;
+        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+        background:
+          url(batik.png),
+          linear-gradient(rgba(96, 149, 240, 0.8), rgba(154, 188, 247, 0.8));
+
+        background-size: cover;
+        background-position: center;
+      }
+      .bri {
+        width: 211px;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        width: 313px;
+        height: 62px;
+        border: none;
+        padding: 12px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 18px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-green {
+        background: #72b64d;
+        color: white;
+        border: 2px solid #3ca238;
+      }
+
+      .btn-blue {
+        background: #5b82c5;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-yellow {
+        background: #c4a771;
+        color: white;
+        border: 1px solid #4657c6;
+      }
+
+      .btn-green:hover {
+        background: #3da239;
+        border: 2px solid white;
+      }
+
+      .btn-blue:hover {
+        background: #2e569b;
+      }
+
+      .btn-yellow:hover {
+        background: #967332;
+        border: 2px solid white;
+      }
+
+      .footer {
+        margin-top: auto;
+        font-size: 12px;
+        opacity: 0.8;
+        margin-left: 130px;
+      }
+
+      /* CONTENT */
+
+      .content {
+        flex: 1;
+        display: flex;
+        align-items: center; /* center horizontal */
+        justify-content: flex-start;
+        padding-top: 70px;
+        flex-direction: column;
+        padding-left: 70px;
+      }
+      .content h1 {
+        margin-bottom: 0px;
+      }
+      .queue-card {
+        width: 850px;
+        height: 371px;
+        background: #9fb6da;
+        border-radius: 10px;
+        margin-top: 45px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        margin-bottom: 5px;
+      }
+
+      .queue-header {
+        background: #d7dbe2;
+        width: 470px;
+        height: 55px;
+        margin: 20px auto;
+        border-radius: 6px;
+        font-weight: 450;
+        text-align: center;
+        font-size: 32px;
+        color: #454545;
+        letter-spacing: -1px;
+        padding-top: 8px;
+        margin-bottom: 0px;
+      }
+
+      .queue-body {
+        position: relative;
+        text-align: center;
+        padding-top: -20px;
+        margin-bottom: -45px;
+      }
+
+      .queue-body img {
+        width: 516px;
+        height: 280px;
+        opacity: 0.5;
+        margin-top: -20px;
+      }
+
+      .queue-body h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+        margin: 0;
+      }
+
+      .queue-footer {
+        background: #d7dbe2;
+        text-align: center;
+        padding: 10px;
+        font-weight: 450;
+        height: 48px;
+        font-size: 32px;
+        color: #454545;
+        letter-spacing: -1px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <img class="bri" src="Rectangle 9.png" alt="bri" />
+
+        <button
+          class="btn btn-green"
+          onclick="location.href = 'nomerantrian.html'"
+        >
+          <img src="ri_train-fill.png" />Ambil Antrian
+        </button>
+        <button class="btn btn-blue">
+          <img src="pixelarticons_calendar-today.png" />Daftar Antrian
+        </button>
+        <button class="btn btn-yellow">
+          <img src="Check-Square--Streamline-Ultimate.svg.png" />Kartu Antrian
+        </button>
+
+        <div class="footer">Kelompok (1) 2026</div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <h1>DAFTAR ANTRIAN</h1>
+        <div class="queue-card">
+          <div class="queue-header">Nomor Antrian Saat Ini</div>
+
+          <div class="queue-body">
+            <img src="orang.png" />
+            <h2>001</h2>
+          </div>
+
+          <div class="queue-footer">Loket Teller</div>
+        </div>
+
+        <!-- CARD CUSTOMER SERVICE -->
+        <div class="queue-card">
+          <div class="queue-header">Nomor Antrian Saat Ini</div>
+
+          <div class="queue-body">
+            <img src="orang.png" />
+            <h2>002</h2>
+          </div>
+
+          <div class="queue-footer">Loket Customer Service</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
