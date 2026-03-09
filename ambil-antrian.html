@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambil Antrian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+      .container {
+  display: flex;
+  width: 1440px;
+  height: 1024px;
+  background-color: #e4eeff;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 368px;
+  height: 1028;
+  background-color: #6095f0;
+  background: url(batik.png);
+  text-align: center;
+}
+
+/*LOGO*/
+.logo {
+  width: 211px;
+  height: 138px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: left;
+}
+
+/*BUTTON*/
+.btn {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+.btn-hijau {
+  background: #3da239;
+  width: 313px;
+  height: 62px;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+}
+.btn-biru {
+  background: #5b82c5;
+  width: 313px;
+  height: 62px;
+  border: 1px solid #4657C6;
+   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+   font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+   font-size: 20px;
+}
+.btn-kuning {
+  background: #c4a771;
+  width: 313px;
+  height: 62px;
+  border: 1px solid #4649C6;
+   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+   font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+   font-size: 20px;
+}
+
+/*CONTENT*/
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/*CARD*/
+.card {
+  background: white;
+  padding: 30px;
+  margin-top: 90px;
+  margin-left: 8px;
+  width: 948px;
+  height: 484px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: left;
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/*INPUT*/
+input,
+select{
+  width: 518px;
+  height: 44px;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px
+
+}
+
+.option {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+   width: 518px;
+  height: 44px;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px
+}
+
+/*BUTTON FORM*/
+.tombol {
+  display: flex;
+  gap: 10px;
+}
+.btn-ambil {
+  width: 518px;
+  height: 56px;
+  background: #3da239;
+  color: white;
+  border: none;
+  padding: 10px;
+  flex: 1;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+   font-size: 20px;
+}
+.batal {
+  width: 128px;
+  height: 56px;
+  background: #f5f5f5;
+  color: black;
+  border: none;
+  padding: 10px;
+  flex: 1;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+   font-size: 20px;
+}
+
+.span {
+  padding-top: 10px;
+   font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.bagian-atas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gambar-bawah {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data {
+  width: 374px;
+  height: 310px;
+}
+
+.transfer {
+  width: 356px;
+  height: 259px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- SIDEBAR -->
+       <div class="sidebar">
+        <img src="reservasi.png" class="logo">
+
+        <a href="ambil.html" class="btn btn-hijau">Ambil Antrian</a>
+        <a href="daftar.html" class="btn btn-biru">Daftar Antrian</a>
+        <a href="kartu.html" class="btn btn-kuning">Kartu Antrian</a>
+       </div>
+
+       <!-- KONTEN -->
+        <div class="content">
+          <div class="card">
+
+            <div class="bagian-atas">
+            <h1> Ambil Antrian</h1>
+            <img src="koin.png" class="koin">
+            </div>
+
+
+            <span>No.Telepon</span>
+            <input type="text" placeholder="08xxxxxxxxx">
+
+            <span>Pilih Loket</span>
+            <select>
+              <option>Teller</option>
+              <option>Customer Service</option>
+            </select>
+
+            <div class="tombol">
+              <button class="btn-ambil" type="submit">Ambil Antrian</button>
+              <button class="batal" type="button">Batal</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</html>
