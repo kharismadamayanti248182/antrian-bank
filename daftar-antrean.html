@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartu Antrian Bank</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        background: #e8edf5;
+      }
+
+      /* SIDEBAR */
+      .sidebar {
+        width: 260px;
+        background: linear-gradient(180deg, #3d6db5, #7ea1d9);
+        color: white;
+        padding: 25px;
+      }
+
+      .logo {
+        width: 95px;
+        display: flex;
+        justify-content: left;
+      }
+
+      .menu button {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+      }
+
+      .btn-ambil {
+        background: #72b64d;
+        border-color: #3ca238;
+        border-radius: 100px;
+      }
+
+      .btn-daftar {
+        background: #5b82c5;
+        border-color: #4657c6;
+      }
+
+      .btn-kartu {
+        background: #967332;
+        border-color: #ffffff;
+      }
+
+      /* CONTENT */
+      .content {
+        flex: 1;
+        padding: 40px;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+
+      /* CARD CONTAINER */
+      .card-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+      }
+
+      /* CARD */
+      .card {
+        width: 350px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .info {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .label {
+        display: inline-block;
+        width: 120px;
+        color: #444;
+      }
+
+      .input-box {
+        background: #eee;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+
+      /* NOMOR ANTRIAN */
+      .nomor {
+        margin-top: 20px;
+        background: #9fb4da;
+        border-radius: 25px;
+        height: 120px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .gambar {
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+      }
+
+      .angka {
+        font-size: 40px;
+        font-weight: bold;
+        z-index: 2;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        font-size: 12px;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="Rectangle 9.png" />
+      </div>
+
+      <div class="menu">
+        <button class="btn-ambil">Ambil Antrian</button>
+        <button class="btn-daftar">Daftar Antrian</button>
+        <button class="btn-kartu">Kartu Antrian</button>
+      </div>
+
+      <div class="footer">Kelompok (1) 2026</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+      <div class="title">KARTU ANTRIAN</div>
+
+      <div class="card-container">
+        <!-- CARD 1 -->
+        <div class="card">
+          <div class="info">
+            <span class="label">Nomor Telepon</span> :
+            <span class="input-box">0876543545667</span>
+          </div>
+
+          <div class="info">
+            <span class="label">Loket</span> :
+            <span class="input-box">Teller</span>
+          </div>
+          <div class="nomor">
+            <img src="orang.png" class="gambar" />
+            <div class="angka">001</div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+          <div class="info">
+            <span class="label">Nomor Telepon</span> :
+            <span class="input-box">081577890987</span>
+          </div>
+
+          <div class="info">
+            <span class="label">Loket</span> :
+            <span class="input-box">Customer Service</span>
+          </div>
+          <div class="nomor">
+            <img src="orang.png" class="gambar" />
+            <div class="angka">002</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
