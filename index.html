@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Daftar Antrian</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins, sans-serif;
+}
+
+body{
+display:flex;
+background:#e9eef7;
+}
+
+.sidebar{
+width:368px;
+height:auto;
+background:linear-gradient(#6095F0, #9ABCF7);  
+padding:25px;
+color:white;
+position:relative;
+}
+
+.logo{
+width: 211px;
+margin-bottom:40px;
+}
+
+.menu button{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:6px;
+font-size:15px;
+cursor:pointer;
+}
+
+.btn-ambil{
+background:#72B64D;
+color:white;
+}
+
+.btn-daftar{
+background:#2E569B;
+color:white;
+}
+
+.btn-kartu{
+background:#C4A771;
+color:white;
+}
+
+.footer{
+position:absolute;
+bottom:20px;
+font-size:12px;
+}
+
+/* CONTENT */
+
+.content{
+flex:1;
+padding:40px;
+text-align:center;
+}
+
+.title{
+font-size:26px;
+font-weight:bold;
+margin-bottom:40px;
+}
+
+.card{
+width:850px;
+height: 351px;
+margin:25px auto;
+background:#BCD4FF;
+border-radius:8px;
+box-shadow:0 3px 8px rgba(0,0,0,0.15);
+}
+
+.card-header{
+background:#E4EEFF;
+display:inline-block;
+padding:8px 20px;
+font-size: 32px;
+border-radius:8px;
+margin-top:20px;
+font-weight:500;
+}
+
+.nomor{
+font-size:96px;
+font-weight:bold;
+margin:20px 0;
+color:#454545;
+}
+
+.loket{
+background:#EFF5FF;
+padding:15px;
+font-weight:500;
+border-top:1px solid #ccc;
+border-radius:0 0 8px 8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<div class="logo">
+<img src="logo (2).png" alt="">
+</div>
+
+<div class="menu">
+<button class="btn-ambil">Ambil Antrian</button>
+<button class="btn-daftar">Daftar Antrian</button>
+<button class="btn-kartu">Kartu Antrian</button>
+</div>
+
+<div class="footer">
+Kelompok (1) 2026
+</div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<div class="title">DAFTAR ANTRIAN</div>
+
+<!-- CARD TELLER -->
+
+<div class="card">
+
+<div class="card-header">
+Nomor Antrian Saat Ini
+</div>
+
+<div class="nomor">
+001
+</div>
+
+<div class="loket">
+Loket Teller
+</div>
+
+</div>
+
+<!-- CARD CUSTOMER SERVICE -->
+
+<div class="card">
+
+<div class="card-header">
+Nomor Antrian Saat Ini
+</div>
+
+<div class="nomor">
+002
+</div>
+
+<div class="loket">
+Loket Customer Service
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
