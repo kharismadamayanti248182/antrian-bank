@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: #eef1f7;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* LEFT SIDE */
+    .left {
+      width: 50%;
+      background: linear-gradient(135deg, #6a8dff, #8fb3ff);
+      border-top-right-radius: 80px;
+      border-bottom-right-radius: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .overlay h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .overlay p {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .btn-outline {
+      padding: 10px 25px;
+      border: 2px solid white;
+      background: transparent;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* RIGHT SIDE */
+    .right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      width: 320px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-box label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #6a8dff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .signin {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .signin a {
+      color: #6a8dff;
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <!-- LEFT SIDE -->
+      <div class="left">
+        <div class="overlay">
+          <h1>Create Account</h1>
+          <p>Start capturing your ideas with a fresh perspective</p>
+          <button class="btn-outline">Register</button>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="right">
+        <div class="form-box">
+          <h2>Register</h2>
+
+          <label>Fullname</label>
+          <input type="text" placeholder="Enter your fullname" />
+
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" />
+
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password" />
+
+          <button class="btn">Register</button>
+
+          <p class="signin">Already have an account? <a href="#">Sign in</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
