@@ -19,15 +19,18 @@
 
     .container {
       display: flex;
-      height: 100vh;
+      height: 1024px;
     }
 
     /* LEFT SIDE */
     .left {
-      width: 50%;
-      background: linear-gradient(135deg, #6a8dff, #8fb3ff);
-      border-top-right-radius: 80px;
-      border-bottom-right-radius: 80px;
+      width: 659px;
+      height: 1024px;
+      background:
+        url(Download\ Megamendung\ Batik\ Pattern\,\ Megamendung\,\ Batik_\ Royalty-Free\ Vector\ Graphic\ 1\ \(1\).png),
+        linear-gradient(rgba(96, 149, 240, 0.8), rgba(154, 188, 247, 0.8));
+      border-top-right-radius: 200px;
+      border-bottom-right-radius: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -35,6 +38,10 @@
       text-align: center;
     }
 
+    .logo {
+      width: 211px;
+      margin-top: -100px;
+    }
     .overlay h1 {
       font-size: 40px;
       margin-bottom: 10px;
@@ -64,15 +71,19 @@
 
     .form-box {
       background: #fff;
-      padding: 30px;
+      padding: 60px;
       border-radius: 15px;
-      width: 320px;
+      width: 520px;
+      height: 654px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      justify-content: center;
     }
 
     .form-box h2 {
       text-align: center;
       margin-bottom: 20px;
+      margin-top: 50px;
     }
 
     .form-box label {
@@ -82,7 +93,8 @@
     }
 
     .form-box input {
-      width: 100%;
+      width: 397px;
+      height: 46px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 8px;
@@ -90,7 +102,10 @@
     }
 
     .btn {
-      width: 100%;
+      width: 213px;
+      height: 53px;
+      margin-left: 90px;
+      margin-right: 90px;
       padding: 10px;
       background: #6a8dff;
       color: white;
@@ -115,6 +130,7 @@
     <div class="container">
       <!-- LEFT SIDE -->
       <div class="left">
+        <img class="logo" src="logo (2).png" alt="logo" />
         <div class="overlay">
           <h1>Create Account</h1>
           <p>Start capturing your ideas with a fresh perspective</p>
@@ -127,16 +143,33 @@
         <div class="form-box">
           <h2>Register</h2>
 
-          <label>Fullname</label>
-          <input type="text" placeholder="Enter your fullname" />
+          <form action="http://rpl-antrian.test/antrian" method="POST">
+            <label>Fullname</label>
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Enter your fullname"
+              required
+            />
 
-          <label>Email</label>
-          <input type="email" placeholder="Enter your email" />
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
 
-          <label>Password</label>
-          <input type="password" placeholder="Enter your password" />
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
 
-          <button class="btn">Register</button>
+            <button type="submit" class="btn">Register</button>
+          </form>
 
           <p class="signin">Already have an account? <a href="#">Sign in</a></p>
         </div>
