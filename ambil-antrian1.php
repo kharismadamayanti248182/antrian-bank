@@ -1,3 +1,19 @@
+<?php
+  //include config db
+  include './config.php';
+
+  //get dari db tabel loket
+  // $query="SELECT services.name FROM service_schedules 
+	// LEFT JOIN services ON service_schedules.service_id=services.id
+	// WHERE DATE='2026-05-04';"
+  $query = "SELECT * FROM services";
+
+  // query dijalanin
+  $result = $conn->query($query);
+
+  $row = $result->fetch_all();
+?>
+
 <!doctype html>
 <html lang="id">
   <head>
@@ -269,31 +285,34 @@
       <!-- Main Content -->
       <div class="main">
         <div class="card">
+          <form action="action-ambil-antrian.php" method="POST"> 
           <div class="form-area">
             <h2 class="h2">Ambil Antrian</h2>
             <hr width="518px" class="hr" />
 
             <label class="label">No.Telepon:</label>
-            <input class="inp" type="text" placeholder="08xxxxxxxxxx" />
+            <input name="no_telp" class="inp" type="text" placeholder="08xxxxxxxxxx" />
 
             <label class="label">Pilih Loket:</label>
-            <select class="dropdown">
-              <option>Loket</option>
-              <option>Customer Service</option>
-              <option>Teller</option>
+            <select name="layanan" class="dropdown">
+              <?php
+                foreach($row as $opsi){
+                  echo "<option value=".$opsi[0]." >".$opsi[1]."</option>";
+                }
+              ?>
             </select>
 
             <div class="action">
               <button
+                type="submit"
                 class="ambil"
-                onclick="location.href = 'nomerantrian.html'"
               >
                 Ambil Antrian
               </button>
               <button class="batal">Batal</button>
             </div>
           </div>
-
+          </form>
           <div class="image-area">
             <img src="koin.png" />
           </div>
