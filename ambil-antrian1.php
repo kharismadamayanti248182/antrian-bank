@@ -110,6 +110,7 @@ $row = $result->fetch_all();
 
       .btn-green:hover {
         background: #3da239;
+
       }
 
       .btn-blue:hover {
@@ -201,9 +202,12 @@ $row = $result->fetch_all();
         height: 50px;
         font-size: 20px;
       }
+      .ambil:hover {
+        background: #81C55D;
+      }
 
       .batal {
-        background: #ddd;
+        background: #F5F5F5;
         border: none;
         padding: 10px 20px;
         border-radius: 4px;
@@ -211,6 +215,9 @@ $row = $result->fetch_all();
         margin-left: 15px;
         height: 50px;
         font-size: 20px;
+      }
+      .batal:hover {
+        background: #B2B1B1;
       }
 
       /* ilustrasi */
