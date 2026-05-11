@@ -1,3 +1,18 @@
+<?php
+// memanggil koneksi di config.php 
+include "./config.php";
+
+// get dari db tabel loket
+$query = "SELECT * FROM services";
+
+//query dijalanin
+$result = $conn->query($query);
+
+$row = $result->fetch_all();
+
+
+?>
+
 <!doctype html>
 <html lang="id">
   <head>
@@ -246,19 +261,19 @@
 
         <button
           class="btn btn-green"
-          onclick="location.href = 'ambil-antrian1.html'"
+          onclick="location.href = 'ambil-antrian1.php'"
         >
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
         <button
           class="btn btn-blue"
-          onclick="location.href = 'daftar-antrian.html'"
+          onclick="location.href = 'daftar-antrian.php'"
         >
           <img src="pixelarticons_calendar-today.png" />Daftar Antrian
         </button>
         <button
           class="btn btn-yellow"
-          onclick="location.href = 'kartu-antrian.html'"
+          onclick="location.href = 'kartu-antrian.php'"
         >
           <img src="Check-Square--Streamline-Ultimate.svg.png" />Kartu Antrian
         </button>
@@ -269,29 +284,33 @@
       <!-- Main Content -->
       <div class="main">
         <div class="card">
-          <div class="form-area">
-            <h2 class="h2">Ambil Antrian</h2>
-            <hr width="518px" class="hr" />
+          <form action="action_ambil_antrian.php" method="POST">
+            <div class="form-area">
+              <h2 class="h2">Ambil Antrian</h2>
+              <hr width="518px" class="hr" />
 
-            <label class="label">No.Telepon:</label>
-            <input class="inp" type="text" placeholder="08xxxxxxxxxx" />
+              <label class="label">No.Telepon:</label>
+              <input class="inp" type="text" name="no_hp" placeholder="08xxxxxxxxxx" />
 
-            <label class="label">Pilih Loket:</label>
-            <select class="dropdown">
-              <option>Loket</option>
-              <option>Customer Service</option>
-              <option>Teller</option>
-            </select>
+              <label class="label">Pilih Loket:</label>
+              <select class="dropdown" name="layanan" required>
+                <?php 
+                foreach($row as $opsi){
+                  echo "<option value=".$opsi[0].">" .$opsi[1]. "</option>";
+                }
+                ?>
+              </select>
 
-            <div class="action">
-              <button
-                class="ambil"
-                onclick="location.href = 'nomerantrian.html'"
-              >
-                Ambil Antrian
-              </button>
-              <button class="batal">Batal</button>
-            </div>
+              <div class="action">
+                <button
+                  class="ambil"
+                  type="submit" name="submit"
+                >
+                  Ambil Antrian
+                </button>
+                <button type="reset" class="batal">Batal</button>
+              </div>
+            </form>
           </div>
 
           <div class="image-area">

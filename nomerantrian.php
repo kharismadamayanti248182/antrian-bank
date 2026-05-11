@@ -1,3 +1,15 @@
+<?php
+$nomor = $_GET['no'];
+$layanan = $_GET['loket'];
+$no_hp = $_GET['hp'];
+
+if ($layanan == 1) {
+    $layanan = "Customer Service";
+} elseif ($layanan == 2) {
+    $layanan = "Teller";
+}
+?>
+
 <!doctype html>
 <html lang="id">
   <head>
@@ -222,19 +234,19 @@
 
         <button
           class="btn btn-green"
-          onclick="location.href = 'ambil-antrian1.html'"
+          onclick="location.href = 'ambil-antrian1.php'"
         >
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
         <button
           class="btn btn-blue"
-          onclick="location.href = 'daftar-antrian.html'"
+          onclick="location.href = 'daftar-antrian.php'"
         >
           <img src="pixelarticons_calendar-today.png" />Daftar Antrian
         </button>
         <button
           class="btn btn-yellow"
-          onclick="location.href = 'kartu-antrian.html'"
+          onclick="location.href = 'kartu-antrian.php'"
         >
           <img src="Check-Square--Streamline-Ultimate.svg.png" />Kartu Antrian
         </button>
@@ -251,18 +263,18 @@
 
           <div class="form">
             <label>No.Telepon:</label>
-            <input type="text" value="0876543545667" />
+            <input type="text" value="<?php echo $no_hp; ?>" readonly />
           </div>
 
-          <p class="loket">Loket Teller :</p>
+          <p class="loket">Loket <?php echo $layanan; ?> :</p>
 
           <div class="nomor-box">
             <img src="orang.png" />
-            <h1>001</h1>
+            <h1><?php echo $nomor; ?></h1>
           </div>
         </div>
 
-        <button class="btn-antrian" onclick="location.href = 'bbbb.html'">
+        <button class="btn-antrian" onclick="location.href = 'ambil-antrian1.php'">
           AMBIL ANTRIAN BARU
         </button>
       </div>

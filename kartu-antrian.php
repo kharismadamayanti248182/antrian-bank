@@ -214,13 +214,13 @@
       <div class="sidebar">
         <img class="bri" src="Rectangle 9.png" alt="bri" />
 
-        <button class="btn green" onclick="location.href = 'ambil-antrian1.html'">
+        <button class="btn green" onclick="location.href = 'ambil-antrian1.php'">
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
-        <button class="btn blue" onclick="location.href = 'daftar-antrian.html'">
+        <button class="btn blue" onclick="location.href = 'daftar-antrian.php'">
           <img src="pixelarticons_calendar-today.png" />Daftar Antrian
         </button>
-        <button class="btn yellow" onclick="location.href = 'kartu-antrian.html'">
+        <button class="btn yellow" onclick="location.href = 'kartu-antrian.php'">
           <img src="Check-Square--Streamline-Ultimate.svg.png" />Kartu Antrian
         </button>
 

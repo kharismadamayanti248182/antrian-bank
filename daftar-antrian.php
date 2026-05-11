@@ -195,19 +195,19 @@
 
         <button
           class="btn btn-green"
-          onclick="location.href = 'ambil-antrian1.html'"
+          onclick="location.href = 'ambil-antrian1.php'"
         >
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
         <button
           class="btn btn-blue"
-          onclick="location.href = 'daftar-antrian.html'"
+          onclick="location.href = 'daftar-antrian.php'"
         >
           <img src="pixelarticons_calendar-today.png" />Daftar Antrian
         </button>
         <button
           class="btn btn-yellow"
-          onclick="location.href = 'kartu-antrian.html'"
+          onclick="location.href = 'kartu-antrian.php'"
         >
           <img src="Check-Square--Streamline-Ultimate.svg.png" />Kartu Antrian
         </button>
