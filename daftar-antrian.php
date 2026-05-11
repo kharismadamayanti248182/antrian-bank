@@ -1,3 +1,59 @@
+<?php
+include "./config.php";
+
+$teller = mysqli_query($conn, "
+    SELECT *
+    FROM queues
+    WHERE service_id = 2
+    AND status = 'waiting'
+    ORDER BY queue_number ASC
+    LIMIT 1
+");
+
+$data_teller = mysqli_fetch_assoc($teller);
+
+$nomor_teller = str_pad(
+    ($data_teller['queue_number'] ?? 0),
+    3,
+    "0",
+    STR_PAD_LEFT
+);
+
+
+$cs = mysqli_query($conn, "
+    SELECT *
+    FROM queues
+    WHERE service_id = 1
+    AND status = 'waiting'
+    ORDER BY queue_number ASC
+    LIMIT 1
+");
+
+$data_cs = mysqli_fetch_assoc($cs);
+
+$nomor_cs = str_pad(
+    ($data_cs['queue_number'] ?? 0),
+    3,
+    "0",
+    STR_PAD_LEFT
+);
+
+
+function namaLayanan($service_id) {
+    if ($service_id == 1) {
+        return "Customer Service";
+    } elseif ($service_id == 2) {
+        return "Teller";
+    }
+
+    return "-";
+}
+
+$service_teller = namaLayanan($data_teller['service_id'] ?? '');
+$service_cs = namaLayanan($data_cs['service_id'] ?? '');
+
+?>
+
 <!doctype html>
 <html lang="id">
   <head>
@@ -223,10 +279,10 @@
 
           <div class="queue-body">
             <img src="orang.png" />
-            <h2>001</h2>
+            <h2><?php echo $nomor_teller; ?></h2>
           </div>
 
-          <div class="queue-footer">Loket Teller</div>
+          <div class="queue-footer">Loket <?php echo $service_teller; ?></div>
         </div>
 
         <!-- CARD CUSTOMER SERVICE -->
@@ -235,10 +291,10 @@
 
           <div class="queue-body">
             <img src="orang.png" />
-            <h2>002</h2>
+            <h2><?php echo $nomor_cs; ?></h2>
           </div>
 
-          <div class="queue-footer">Loket Customer Service</div>
+          <div class="queue-footer">Loket <?php echo $service_cs; ?></div>
         </div>
       </div>
     </div>
