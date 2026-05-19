@@ -9,7 +9,8 @@ $no_telp = "08123456789";
 $query = mysqli_query($conn, "
     SELECT * FROM queues
     WHERE visitor_phone = '$no_telp'
-    ORDER BY id DESC
+    AND status != 'done'
+    ORDER BY queue_number DESC
 ");
 
 ?>

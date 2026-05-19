@@ -6,6 +6,28 @@ $layanan = $_POST['layanan'];
 
 $today = date("Y-m-d");
 
+$cek = mysqli_query($conn, "
+    SELECT COUNT(*) as total
+    FROM queues
+    WHERE visitor_phone = '$no_hp'
+    AND DATE(appointment_date) = '$today'
+");
+
+$data_cek = mysqli_fetch_assoc($cek);
+
+// jika sudah 2 antrian
+if($data_cek['total'] >= 2){
+
+    echo "
+    <script>
+        alert('Nomor HP hanya bisa mengambil maksimal 2 antrian per hari');
+        window.history.back();
+    </script>
+    ";
+
+    exit;
+}
+
 
 // cek nomor terakhir hari ini sesuai loket
 $result = mysqli_query($conn, "
