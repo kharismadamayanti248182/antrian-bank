@@ -1,3 +1,19 @@
+<?php
+
+$conn = mysqli_connect("localhost","root","","admin_antrian");
+
+// misal nomor telepon didapat dari form/login
+$no_telp = "08123456789";
+
+// ambil data antrian berdasarkan nomor telepon
+$query = mysqli_query($conn, "
+    SELECT * FROM queues
+    WHERE visitor_phone = '$no_telp'
+    ORDER BY id DESC
+");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,27 +81,26 @@
         transform: translateY(-2px);
       }
 
-      .btn-green {
+      .green {
         background: #72b64d;
         color: white;
-        border: 2px solid #3ca238;
+        border: 2px solid white;
       }
 
-      .btn-blue {
+      .blue {
         background: #5b82c5;
         color: white;
         border: 1px solid #2e569b;
       }
 
-      .btn-yellow {
+      .yellow {
         background: #c4a771;
         color: white;
-        border: 1px solid white;
+        border: 1px solid #4657c6;
       }
 
       .btn-green:hover {
         background: #3da239;
-        border: 2px solid white;
       }
 
       .btn-blue:hover {
@@ -95,6 +110,7 @@
 
       .btn-yellow:hover {
         background: #967332;
+        border: 2px solid white;
       }
 
       .footer {
@@ -214,13 +230,13 @@
       <div class="sidebar">
         <img class="bri" src="Rectangle 9.png" alt="bri" />
 
-        <button class="btn btn-green" onclick="location.href = 'ambil-antrian1.php'">
+        <button class="btn green" onclick="location.href = 'ambil-antrian1.php'">
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
-        <button class="btn btn-blue" onclick="location.href = 'daftar-antrian.php'">
+        <button class="btn blue" onclick="location.href = 'daftar-antrian.php'">
           <img src="pixelarticons_calendar-today.png" />Daftar Antrian
         </button>
-        <button class="btn btn-yellow" onclick="location.href = 'kartu-antrian.php'">
+        <button class="btn yellow" onclick="location.href = 'kartu-antrian.php'">
           <img src="Check-Square--Streamline-Ultimate.svg.png" />Kartu Antrian
         </button>
 
@@ -234,51 +250,63 @@
 
         <div class="card-container">
 
-            <!-- CARD 1 -->
-            <div class="card">
+            <?php
+            if(mysqli_num_rows($query) > 0){
 
-                <div class="info">
-                    <div class="row">
-                        <span class="label">Nomor Telepon</span>
-                        <span class="titik">:</span>
-                        <span class="input-box">0876543545667</span>
+                while($data = mysqli_fetch_assoc($query)){
+
+                    // format nomor antrian jadi 001, 002, dst
+                    $nomor = str_pad($data['queue_number'], 3, "0", STR_PAD_LEFT);
+
+                    // ubah service_id jadi nama loket
+                    if($data['service_id'] == 1){
+                        $loket = "Customer Service";
+                    } 
+                    else if($data['service_id'] == 2){
+                        $loket = "Teller";
+                    } 
+                    else{
+                        $loket = "Loket";
+                    }
+            ?>
+
+                <div class="card">
+
+                    <div class="info">
+
+                        <div class="row">
+                            <span class="label">Nomor Telepon</span>
+                            <span class="titik">:</span>
+                            <span class="input-box">
+                                <?php echo $data['visitor_phone']; ?>
+                            </span>
+                        </div>
+
+                        <div class="row">
+                            <span class="label">Loket</span>
+                            <span class="titik">:</span>
+                            <span class="input-box">
+                                <?php echo $loket; ?>
+                            </span>
+                        </div>
+
                     </div>
 
-                    <div class="row">
-                        <span class="label">Loket</span>
-                        <span class="titik">:</span>
-                        <span class="input-box">Teller</span>
-                    </div>
-                </div>
-
-                <div class="ticket">
-                    <img src="orang.png">
-                    <h2>001</h2>
-                </div>
-
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="card">
-
-                <div class="info">
-                    <div class="row">
-                        <span class="label">Nomor Telepon</span>
-                        <span class="titik">:</span>
-                        <span class="input-box">081577890987</span>
+                    <div class="ticket">
+                        <img src="orang.png">
+                        <h2><?php echo $nomor; ?></h2>
                     </div>
 
-                    <div class="row">
-                        <span class="label">Loket</span>
-                        <span class="titik">:</span>
-                        <span class="input-box">Customer Service</span>
-                    </div>
                 </div>
-                <div class="ticket">
-                    <img src="orang.png">
-                    <h2>002</h2>
-                </div>
-            </div>
+
+            <?php
+                }
+
+            }else{
+                echo "<h2>Belum Ada Antrian</h2>";
+            }
+            ?>
+
         </div>
     </div>
 

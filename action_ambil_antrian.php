@@ -4,22 +4,28 @@ include "./config.php";
 $no_hp = $_POST['no_hp'];
 $layanan = $_POST['layanan'];
 
+$today = date("Y-m-d");
+
+
+// cek nomor terakhir hari ini sesuai loket
 $result = mysqli_query($conn, "
-    SELECT queue_number 
-    FROM queues 
+    SELECT queue_number
+    FROM queues
     WHERE service_id = '$layanan'
-    ORDER BY queue_number DESC 
+    AND DATE(appointment_date) = '$today'
+    ORDER BY queue_number DESC
     LIMIT 1
 ");
 
 $data = mysqli_fetch_assoc($result);
+
 
 $nomor = $data['queue_number'] + 1;
 $nomor_format = str_pad($nomor, 3, "0", STR_PAD_LEFT);
 
 //tulisquery
 $query = "INSERT INTO queues (service_id, visitor_phone, queue_number, appointment_date) 
-VALUES ('$layanan', '$no_hp', '$nomor', CURDATE())";
+VALUES ('$layanan', '$no_hp', '$nomor', NOW())";
 
 //jalankan
 $result = $conn->query($query);
