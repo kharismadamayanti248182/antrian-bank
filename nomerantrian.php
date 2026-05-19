@@ -103,7 +103,7 @@ if ($layanan == 1) {
       .btn-yellow {
         background: #c4a771;
         color: white;
-        border: 1px solid #4657c6;
+        border: 1px solid #967332;
       }
 
       .btn-green:hover {
