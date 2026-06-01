@@ -5,11 +5,13 @@ $conn = mysqli_connect("localhost","root","","admin_antrian");
 // misal nomor telepon didapat dari form/login
 $no_telp = "08123456789";
 
-// ambil data antrian berdasarkan nomor telepon
+$today = date("Y-m-d");
+
 $query = mysqli_query($conn, "
     SELECT *
     FROM queues
     WHERE visitor_phone = '$no_telp'
+    AND DATE(appointment_date) = '$today'
     AND status != 'done'
     ORDER BY queue_number ASC
 ");
