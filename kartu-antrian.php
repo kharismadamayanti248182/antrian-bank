@@ -232,7 +232,7 @@ $query = mysqli_query($conn, "
       <div class="sidebar">
         <img class="bri" src="Rectangle 9.png" alt="bri" />
 
-        <button class="btn green" onclick="location.href = 'ambil-antrian1.php'">
+        <button class="btn green" onclick="location.href = 'index.php'">
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
         <button class="btn blue" onclick="location.href = 'daftar-antrian.php'">
@@ -263,12 +263,8 @@ $query = mysqli_query($conn, "
                     // ubah service_id jadi nama loket
                     if($data['service_id'] == 1){
                         $loket = "Customer Service";
-                    } 
-                    else if($data['service_id'] == 2){
+                    }else{
                         $loket = "Teller";
-                    } 
-                    else{
-                        $loket = "Loket";
                     }
             ?>
 

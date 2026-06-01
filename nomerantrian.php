@@ -234,7 +234,7 @@ if ($layanan == 1) {
 
         <button
           class="btn btn-green"
-          onclick="location.href = 'ambil-antrian1.php'"
+          onclick="location.href = 'index.php'"
         >
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
@@ -274,7 +274,7 @@ if ($layanan == 1) {
           </div>
         </div>
 
-        <button class="btn-antrian" onclick="location.href = 'ambil-antrian1.php'">
+        <button class="btn-antrian" onclick="location.href = 'index.php'">
           AMBIL ANTRIAN BARU
         </button>
       </div>

@@ -251,7 +251,7 @@ $service_cs = namaLayanan($data_cs['service_id'] ?? '');
 
         <button
           class="btn btn-green"
-          onclick="location.href = 'ambil-antrian1.php'"
+          onclick="location.href = 'index.php'"
         >
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
