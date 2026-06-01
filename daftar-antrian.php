@@ -1,11 +1,14 @@
 <?php
 include "./config.php";
 
+$today = date("Y-m-d");
+
 $teller = mysqli_query($conn, "
     SELECT *
     FROM queues
     WHERE service_id = 2
     AND status = 'waiting'
+    AND DATE(appointment_date) = '$today'
     ORDER BY queue_number ASC
     LIMIT 1
 ");
@@ -25,6 +28,7 @@ $cs = mysqli_query($conn, "
     FROM queues
     WHERE service_id = 1
     AND status = 'waiting'
+    AND DATE(appointment_date) = '$today'
     ORDER BY queue_number ASC
     LIMIT 1
 ");
