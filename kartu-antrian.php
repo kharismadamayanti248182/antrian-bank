@@ -7,14 +7,11 @@ $no_telp = "08123456789";
 
 // ambil data antrian berdasarkan nomor telepon
 $query = mysqli_query($conn, "
-    SELECT * FROM queues
+    SELECT *
+    FROM queues
     WHERE visitor_phone = '$no_telp'
-<<<<<<< Updated upstream
     AND status != 'done'
-    ORDER BY queue_number DESC
-=======
-    ORDER BY id DESC
->>>>>>> Stashed changes
+    ORDER BY queue_number ASC
 ");
 
 ?>
