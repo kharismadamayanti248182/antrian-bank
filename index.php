@@ -3,7 +3,7 @@
 include "./config.php";
 
 // get dari db tabel loket
-$query = "SELECT * FROM services";
+$query = "SELECT * FROM services WHERE is_active = 1";
 
 //query dijalanin
 $result = $conn->query($query);
