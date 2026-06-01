@@ -291,7 +291,7 @@ $row = $result->fetch_all();
       <!-- Main Content -->
       <div class="main">
         <div class="card">
-          <form action="action_ambil_antrian.php" method="POST">
+          <form action="action_index.php" method="POST">
             <div class="form-area">
               <h2 class="h2">Ambil Antrian</h2>
               <hr width="518px" class="hr" />
