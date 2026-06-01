@@ -297,7 +297,7 @@ $row = $result->fetch_all();
               <hr width="518px" class="hr" />
 
               <label class="label">No.Telepon:</label>
-              <input class="inp" type="text" name="no_hp" placeholder="08xxxxxxxxxx" />
+              <input class="inp" type="text" name="no_hp" placeholder="08xxxxxxxxxx" required/>
 
               <label class="label">Pilih Loket:</label>
               <select class="dropdown" name="layanan" required>
