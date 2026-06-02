@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 $conn = mysqli_connect("localhost","root","","admin_antrian");
 
 // misal nomor telepon didapat dari form/login
-$no_telp = "08123456789";
+$no_telp = $_SESSION['no_hp'] ?? '';
 
 $today = date("Y-m-d");
 

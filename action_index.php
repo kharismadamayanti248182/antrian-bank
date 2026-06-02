@@ -1,8 +1,11 @@
 <?php
+session_start();
 include "./config.php";
 // terima dulu datnya
 $no_hp = $_POST['no_hp'];
 $layanan = $_POST['layanan'];
+
+$_SESSION['no_hp'] = $no_hp;
 
 $today = date("Y-m-d");
 
@@ -53,5 +56,5 @@ VALUES ('$layanan', '$no_hp', '$nomor', NOW())";
 $result = $conn->query($query);
 
 header("Location: nomerantrian.php?no=$nomor_format&loket=$layanan&hp=$no_hp");
-
+exit;
 ?>
