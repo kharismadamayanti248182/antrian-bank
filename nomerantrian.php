@@ -1,13 +1,19 @@
 <?php
+include "./config.php";
+
 $nomor = $_GET['no'];
-$layanan = $_GET['loket'];
+$id_layanan = $_GET['loket'];
 $no_hp = $_GET['hp'];
 
-if ($layanan == 1) {
-    $layanan = "Customer Service";
-} elseif ($layanan == 2) {
-    $layanan = "Teller";
-}
+$query = mysqli_query($conn, "
+    SELECT *
+    FROM services
+    WHERE id_service = '$id_layanan'
+");
+
+$data = mysqli_fetch_assoc($query);
+
+$layanan = $data['name'];
 ?>
 
 <!doctype html>
