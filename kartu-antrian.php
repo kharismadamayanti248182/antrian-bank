@@ -85,26 +85,27 @@ $query = mysqli_query($conn, "
         transform: translateY(-2px);
       }
 
-      .green {
+      .btn-green {
         background: #72b64d;
         color: white;
-        border: 2px solid white;
+        border: 2px solid #3ca238;
       }
 
-      .blue {
+      .btn-blue {
         background: #5b82c5;
         color: white;
         border: 1px solid #2e569b;
       }
 
-      .yellow {
+      .btn-yellow {
         background: #c4a771;
         color: white;
-        border: 1px solid #4657c6;
+        border: 1px solid white;
       }
 
       .btn-green:hover {
         background: #3da239;
+        border: 2px solid white;
       }
 
       .btn-blue:hover {
@@ -234,13 +235,13 @@ $query = mysqli_query($conn, "
       <div class="sidebar">
         <img class="bri" src="Rectangle 9.png" alt="bri" />
 
-        <button class="btn green" onclick="location.href = 'index.php'">
+        <button class="btn btn-green" onclick="location.href = 'index.php'">
           <img src="ri_train-fill.png" />Ambil Antrian
         </button>
-        <button class="btn blue" onclick="location.href = 'daftar-antrian.php'">
+        <button class="btn btn-blue" onclick="location.href = 'daftar-antrian.php'">
           <img src="pixelarticons_calendar-today.png" />Daftar Antrian
         </button>
-        <button class="btn yellow" onclick="location.href = 'kartu-antrian.php'">
+        <button class="btn btn-yellow" onclick="location.href = 'kartu-antrian.php'">
           <img src="Check-Square--Streamline-Ultimate.svg.png" />Kartu Antrian
         </button>
 
