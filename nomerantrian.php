@@ -2,13 +2,13 @@
 include "./config.php";
 
 $nomor = $_GET['no'];
-$id_layanan = $_GET['loket'];
+$layanan = $_GET['loket'];
 $no_hp = $_GET['hp'];
 
 $query = mysqli_query($conn, "
     SELECT *
     FROM services
-    WHERE id_service = '$id_layanan'
+    WHERE id = '$layanan'
 ");
 
 $data = mysqli_fetch_assoc($query);
