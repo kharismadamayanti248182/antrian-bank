@@ -136,7 +136,7 @@ $service_cs = namaLayanan($data_cs['service_id'] ?? '');
       .btn-green {
         background: #72b64d;
         color: white;
-        border: 2px solid #3ca238;
+        border: 1px solid #3ca238;
       }
 
       .btn-blue {

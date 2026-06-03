@@ -88,7 +88,7 @@ $query = mysqli_query($conn, "
       .btn-green {
         background: #72b64d;
         color: white;
-        border: 2px solid #3ca238;
+        border: 1px solid #3ca238;
       }
 
       .btn-blue {
@@ -100,7 +100,7 @@ $query = mysqli_query($conn, "
       .btn-yellow {
         background: #c4a771;
         color: white;
-        border: 1px solid white;
+        border: 2px solid white;
       }
 
       .btn-green:hover {
@@ -115,7 +115,6 @@ $query = mysqli_query($conn, "
 
       .btn-yellow:hover {
         background: #967332;
-        border: 2px solid white;
       }
 
       .footer {
